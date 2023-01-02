@@ -1,0 +1,30 @@
+@use "sass:math";
+@use "_variables.scss" as *;
+
+@function stripUnits($value) {
+	@return math.div($value, ($value * 0 + 1));
+}
+
+@function rem($pxValue, $base-value: $baseFontSize) {
+	@if getUnit($pxValue) == "rem" {
+		@debug #{$pxValue};
+		@return $pxValue;
+	}
+	$value: math.div(stripUnits($pxValue), stripUnits($base-value)) * 1rem;
+	@if ($value == 0rem) {
+		$value: 0;
+	}
+	@return $value;
+}
+
+@function em($pxValue, $base-value: $baseFontSize) {
+	@if getUnit($pxValue) == "em" {
+		@debug #{$pxValue};
+		@return $pxValue;
+	}
+	$value: math.div(stripUnits($pxValue), stripUnits($base-value)) * 1em;
+	@if ($value == 0em) {
+		$value: 0;
+	}
+	@return $value;
+}

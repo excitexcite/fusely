@@ -1,0 +1,109 @@
+@use "sass:math";
+@use "_variables.scss" as *;
+@use "_functions.scss" as *;
+
+/// https://www.smashingmagazine.com/2016/05/fluid-typography/#controlling-the-rate-of-scale
+@mixin adaptive-font($mobileFontSize, $pcFontSize) {
+	$fMin: rem($mobileFontSize);
+	$fMax: rem($pcFontSize);
+	$minW: rem($minWidth);
+	$maxW: rem($maxWidthContainer);
+	font-size: $fMin;
+	@media screen and (min-width: em($minWidth)) {
+		font-size: calc(
+			#{$fMin} + #{stripUnits($fMax - $fMin)} *
+				((100vw - #{$minWidth + px}) / #{stripUnits($maxW - $minW)})
+		);
+	}
+	@media screen and (min-width: em($maxWidthContainer)) {
+		font-size: $fMax;
+	}
+}
+
+@mixin adaptive-value-px($property, $initialSize, $minSize, $type) {
+	$addSize: $initialSize - $minSize;
+	@if $type == 1 {
+		#{$property}: $initialSize + px;
+		@media (max-width: #{$maxWidthContainer + px}) {
+			#{$property}: calc(
+				#{$minSize + px} + #{$addSize} *
+					((100vw - #{$minWidth + px}) / #{$maxWidthContainer - $minWidth})
+			);
+		}
+	} @else if $type == 2 {
+		#{$property}: $initialSize + px;
+		@media (min-width: #{$maxWidthContainer + px}) {
+			#{$property}: calc(
+				#{$minSize + px} + #{$addSize} *
+					((100vw - #{$minWidth + px}) / #{$maxWidth - $minWidth})
+			);
+		}
+	} @else {
+		#{$property}: calc(
+			#{$minSize +
+				px} +
+				#{$addSize} *
+				((100vw - #{$minWidth + px}) / #{$maxWidth - $minWidth})
+		);
+	}
+}
+
+@mixin adaptive-value($property, $initialSize, $minSize, $type, $measure: rem) {
+	@if ($measure == "em") {
+		$initialSize: em($initialSize);
+		$minSize: em($minSize);
+	} @else if ($measure == "rem") {
+		$initialSize: rem($initialSize);
+		$minSize: rem($minSize);
+	} @else {
+		$initialSize: stripUnits($initialSize);
+		$minSize: stripUnits($minSize);
+	}
+	$addSize: $initialSize - $minSize;
+	@if $type == 1 {
+		#{$property}: $initialSize;
+
+		@media (max-width: em($maxWidthContainer)) {
+			#{$property}: calc(
+				#{$minSize} + #{stripUnits($addSize)} *
+					(
+						(100vw - #{$minWidth + px}) / #{stripUnits(
+								em($maxWidthContainer - $minWidth)
+							)}
+					)
+			);
+		}
+	} @else if $type == 2 {
+		#{$property}: $initialSize;
+		@media (min-width: em($maxWidthContainer)) {
+			#{$property}: calc(
+				#{$minSize} + #{stripUnits($addSize)} *
+					(
+						(100vw - #{$minWidth + px}) / #{stripUnits(
+								em($maxWidth - $minWidth)
+							)}
+					)
+			);
+		}
+	} @else {
+		#{$property}: calc(
+			#{$minSize} +
+				#{stripUnits($addSize)} *
+				((100vw - #{$minWidth + px}) / #{stripUnits(em($maxWidth - $minWidth))})
+		);
+	}
+}
+
+@mixin mqd($bp) {
+	$w: em($bp - 0.1);
+	@media (max-width: $w) {
+		@content;
+	}
+}
+
+@mixin mqm($bp) {
+	$w: em($bp - 0.1);
+	@media (min-width: $w) {
+		@content;
+	}
+}

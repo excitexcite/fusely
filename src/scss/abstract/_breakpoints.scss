@@ -1,0 +1,96 @@
+@use "_variables.scss" as *;
+@use "_functions.scss" as *;
+
+$breakpoints: (
+	"mobileS": em(320 - 0.1),
+	"mobileM": em(480 - 0.1),
+	"tabletS": em(768 - 0.1),
+	"tabletM": em(834 - 0.1),
+	"tabletL": em(960 - 0.1),
+	"laptop": em(1280 - 0.1),
+	"pc": em(1440 - 0.1),
+);
+
+@mixin mobileS {
+	@media (max-width: map-get($breakpoints, "mobileS")) {
+		@content;
+	}
+}
+
+@mixin mobileM {
+	@media (max-width: map-get($breakpoints, "mobileM")) {
+		@content;
+	}
+}
+
+@mixin tabletS {
+	@media (max-width: map-get($breakpoints, "tabletS")) {
+		@content;
+	}
+}
+
+@mixin tabletM {
+	@media (max-width: map-get($breakpoints, "tabletM")) {
+		@content;
+	}
+}
+
+@mixin tabletL {
+	@media (max-width: map-get($breakpoints, "tabletL")) {
+		@content;
+	}
+}
+
+@mixin laptop {
+	@media (max-width: map-get($breakpoints, "laptop")) {
+		@content;
+	}
+}
+
+@mixin pc {
+	@media (min-width: map-get($breakpoints, "pc")) {
+		@content;
+	}
+}
+
+@mixin m-mobileS {
+	@media (min-width: map-get($breakpoints, "mobileS")) {
+		@content;
+	}
+}
+
+@mixin m-mobileM {
+	@media (min-width: map-get($breakpoints, "mobileM")) {
+		@content;
+	}
+}
+
+@mixin m-tabletS {
+	@media (min-width: map-get($breakpoints, "tabletS")) {
+		@content;
+	}
+}
+
+@mixin m-tabletM {
+	@media (min-width: map-get($breakpoints, "tabletM")) {
+		@content;
+	}
+}
+
+@mixin m-tabletL {
+	@media (min-width: map-get($breakpoints, "tabletL")) {
+		@content;
+	}
+}
+
+@mixin m-laptop {
+	@media (min-width: map-get($breakpoints, "laptop")) {
+		@content;
+	}
+}
+
+@mixin m-pc {
+	@media (min-width: map-get($breakpoints, "pc")) {
+		@content;
+	}
+}

@@ -1,0 +1,11 @@
+@forward "header";
+@forward "footer";
+@forward "main";
+
+@use "abstract" as *;
+@use "base" as *;
+@use "sass:math";
+
+.page {
+	position: relative;
+}
