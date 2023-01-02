@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "gulpfile.js",
 	"type": "module",
-	"homepage": "https://github.com/excitexcite/Kyda-pizza",
+	"homepage": "https://github.com/excitexcite/fusely",
 	"scripts": {
 		"fonts": "gulp fonts",
 		"dev": "gulp",
