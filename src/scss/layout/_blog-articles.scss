@@ -1,0 +1,79 @@
+@use "abstract" as *;
+@use "base" as *;
+@use "sass:math";
+
+.blog__heading-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	row-gap: 1rem;
+	@include adaptive-value("margin-bottom", 90, 40, 1, $tablet);
+}
+
+.blog__articles {
+	display: grid;
+	@include adaptive-value("gap", 45, 40, 1, $tablet);
+
+	@include mqm(1240) {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
+
+.blog__article {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	gap: rem(26);
+
+	@include mqm($tablet) {
+		flex-direction: row;
+		align-items: center;
+	}
+
+	@include mqm(1240) {
+		flex-direction: column;
+	}
+}
+
+.blog__article-image-container {
+	width: 100%;
+
+	align-self: center;
+
+	@include mqm($tablet) {
+		min-width: rem(353);
+		max-width: rem(353);
+	}
+
+	@include mqm(1240) {
+		max-width: max-content;
+	}
+}
+
+.blog__acticle-image {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+.blog__article-title {
+	font-family: sans-serif;
+	font-weight: 600;
+	font-size: rem(22);
+	line-height: 1.5;
+	letter-spacing: -1px;
+	color: var(--blog-article-title);
+	margin-bottom: rem(6);
+}
+
+.blog__article-text {
+	line-height: math.div(26, 16);
+}
+
+.blob__article-link {
+	display: inline-block;
+	padding-inline: rem(6.5);
+	margin-top: rem(26);
+}

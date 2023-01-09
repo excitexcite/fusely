@@ -1,9 +1,20 @@
 $maxWidth: 1920;
-$minWidth: 390;
-$maxWidthContainer: 1330;
+$minWidth: 428;
+$maxWidthContainer: 1280 + 80;
 $baseFontSize: 16;
+
+$mobile: 428;
+$tablet: 768;
+$pc: 900;
 
 $buttonTransition: 300ms;
 $buttonDelay: 0;
 $linkTransition: 200ms;
 $linkDelay: 0;
+
+$themeColorTransition: color 500ms ease-in-out,
+	background-color 500ms ease-in-out;
+
+$dropdownTransition: 280ms opacity 120ms ease-out,
+	280ms transform 120ms ease-out, 280ms visibility 120ms ease-out, 500ms color,
+	500ms background-color;

@@ -1,0 +1,74 @@
+@use "abstract" as *;
+@use "base" as *;
+@use "sass:math";
+
+.pricing__heading {
+	@include mqm($pc) {
+		text-align: center;
+	}
+	@include adaptive-value("margin-bottom", 90, 40, 1, $tablet);
+}
+
+.pricing__tarifs {
+	display: grid;
+	align-items: center;
+	width: 100%;
+	@include adaptive-value("gap", 24, 45, 1, $tablet);
+
+	@include mqm($pc) {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
+
+.pricing__tarif {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: rem(30);
+	padding-block: rem(46);
+	font-size: rem(18);
+	line-height: 1.5;
+	background-color: var(--pricing-card-bg);
+	color: var(--pricing-card-text);
+}
+
+.pricing__tarif-price {
+	font-weight: 700;
+	font-size: rem(40);
+	line-height: 1.4;
+	color: var(--pricing-card-title);
+
+	@include mqm($tablet) {
+		font-size: rem(50);
+		line-height: 1.125;
+	}
+}
+
+.pricing__tafic-options {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	gap: rem(14);
+}
+
+.pricing__tarfic-period {
+	font-size: rem(18);
+	font-weight: 400;
+}
+
+.pricing__tarif--preffered {
+	background-color: var(--primary400);
+	color: rgba(255, 255, 255, 0.8);
+	padding-block: rem(70);
+	gap: rem(40);
+	--pricing-card-title: var(--neutral100);
+
+	& button {
+		padding-inline: rem(47);
+	}
+}
+
+.pricing__pointed-text {
+	color: var(--pricing-card-title);
+}

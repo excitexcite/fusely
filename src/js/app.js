@@ -1,8 +1,8 @@
 'use strict';
 
-import { TabsAutomatic } from './modules/tabs-a11y.js';
 import * as slider from './modules/slider.js';
 import * as func from './modules/functions.js';
+import * as theme from './modules/theme.js';
 
 func.isWebp();
 
@@ -13,7 +13,7 @@ document.documentElement.style.setProperty(
 );
 
 const menuToggle = document.querySelector('.menu-button');
-const menuBody = document.querySelector('.menu-mobile');
+const menuBody = document.querySelector('.menu__body');
 
 if (menuToggle) {
 	menuToggle.addEventListener('click', function (event) {
@@ -25,26 +25,66 @@ if (menuToggle) {
 
 function toggleBurgerInteractionClasses() {
 	// disable scroll on the page while menu is open
-	document.body.classList.toggle('scroll-lock');
+	document.documentElement.classList.toggle('scroll-lock');
 	menuToggle.classList.toggle('menu-button--active');
-	menuBody.classList.toggle('menu-mobile--active');
+	menuBody.classList.toggle('menu__body--active');
 }
 
-const pcMenuContainer = document.getElementById('nav-other');
-const mobileContacts = document.querySelector('.menu-mobile__contacts');
-const menuItemsList = document.getElementById('other-dropdown');
+/// watching page scroll to remove extra padding from header
+/// after scrolling a bit from the top of the page
+const header = document.querySelector('.header');
+const mainSectionAnchor = document.querySelector('.hero__title');
+const headerSectionOptions = {
+	rootMargin: '-200px 0px 0px 0px',
+};
 
-const smallDevice = window.matchMedia('(min-width: 48em)');
+const headerSectionObserver = new IntersectionObserver(function (
+	entries,
+	headerSectionObserver
+) {
+	entries.forEach((entry) => {
+		if (!entry.isIntersecting) {
+			header.classList.add('header--scrolled');
+		} else {
+			header.classList.remove('header--scrolled');
+		}
+	});
+},
+headerSectionOptions);
 
-smallDevice.addListener(handleDeviceChange);
+headerSectionObserver.observe(mainSectionAnchor);
 
-function handleDeviceChange(e) {
-	if (e.matches) {
-		pcMenuContainer.append(menuItemsList);
-	} else {
-		mobileContacts.before(menuItemsList);
+/// listening to intersectioning with site section
+/// to add underline to site navigation link
+const navMenuLinks = document.querySelectorAll('.menu__link');
+const navMenuObserver = new IntersectionObserver(
+	function (entries) {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				navMenuLinks.forEach((link) => {
+					const targetSection = link.getAttribute('href').replace('#', '');
+					link.classList.toggle(
+						'menu__link--active',
+						targetSection === entry.target.id
+					);
+				});
+			}
+		});
+	},
+	{
+		rootMargin: '-100px 0px 0px 0px',
 	}
-}
+);
 
-// Run it initially
-handleDeviceChange(smallDevice);
+document
+	.querySelectorAll('.section')
+	.forEach((section) => navMenuObserver.observe(section));
+
+/// scroll to site section and clost mobile after the click on link
+navMenuLinks.forEach((link) => {
+	link.addEventListener('click', function (event) {
+		if (menuBody.classList.contains('menu__body--active')) {
+			toggleBurgerInteractionClasses();
+		}
+	});
+});

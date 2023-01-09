@@ -1,0 +1,75 @@
+@use "abstract" as *;
+@use "base" as *;
+@use "sass:math";
+
+.page__testimonials {
+	padding-bottom: rem(105);
+}
+
+.testimonials {
+	position: relative;
+}
+
+.testimonials__title {
+	@include adaptive-value("margin-bottom", 130, 60, 1, $tablet);
+}
+
+.testimonials__swiper-container {
+	max-width: rem(1440);
+	overflow: hidden;
+	margin-inline: rem(-80);
+}
+
+.testimonials__item {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	max-width: rem(300);
+	height: rem(328);
+	background-color: var(--slider-card-background);
+	color: var(--slider-card-text);
+	line-height: 1.55;
+	border-radius: 2px;
+	padding: 0 10px;
+
+	@include mqm(410) {
+		max-width: rem(380);
+		padding: 0 20px;
+	}
+
+	@include mqm(500) {
+		max-width: rem(400);
+	}
+
+	@include mqm(600) {
+		max-width: rem(566);
+		padding: 0 80px;
+	}
+}
+
+.testimonials__text {
+	font-size: rem(22);
+	font-style: italic;
+}
+
+.testimonials__author {
+	margin-top: rem(40);
+	font-size: rem(18);
+}
+
+.swiper-pagination {
+	bottom: rem(14) !important;
+	z-index: inherit;
+}
+
+.swiper-pagination-bullet {
+	width: rem(12);
+	height: rem(12);
+	background-color: rgba(207, 207, 222, 0.5);
+	opacity: revert;
+
+	&-active {
+		background-color: var(--slider-pagination-color);
+	}
+}
