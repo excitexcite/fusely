@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Fusely</title>
+		<link href="css/style.min.css?_v=20230109121033" rel="stylesheet" />
+	</head>
+
+	<body tabindex="-1">
+		<div class="wrapper">
+			<header class="header">
+	<div class="header__container">
+		<div class="header__logo-wrapper">
+			<a class="logo logo__link" href="">
+				<img class="logo__img" src="img/fusely-logo.svg" alt="Site logo" />
+				fusely
+			</a>
+		</div>
+		<div class="header__menu menu">
+			<button
+				class="menu__togle menu-button"
+				aria-controls="mobile-navigation"
+				aria-hidden="false"
+			>
+				<span class="visually-hidden">Menu</span>
+				<span class="menu-button__icon" aria-hidden="true"></span>
+			</button>
+			<nav class="menu__body" aria-label="Mobile Navigation">
+				<ul class="menu__list">
+					<li class="menu__list-item">
+						<a class="link-menu menu__link" href="#hero">Home</a>
+					</li>
+					<li class="menu__list-item">
+						<a class="link-menu menu__link" href="#features">Features</a>
+					</li>
+					<li class="menu__list-item">
+						<a class="link-menu menu__link" href="#pricing">Pricing</a>
+					</li>
+					<li class="menu__list-item">
+						<a class="link-menu menu__link" href="#articles">Blog</a>
+					</li>
+					<li class="menu__list-item">
+						<a class="link-menu menu__link" href="#contacts">Contact</a>
+					</li>
+				</ul>
+				<div class="header__login-singup-mobile">
+					<button class="button button-outlined header__login">Log in</button>
+					<button class="button button-primary header__signup">
+						Get started
+					</button>
+				</div>
+			</nav>
+		</div>
+		<div class="header__login-singup">
+			<div class="dropdown theme-switcher">
+				<button
+					type="button"
+					class="dropdown__title theme-swithcer__title"
+					aria-expanded="false"
+					aria-controls="theme"
+					id="theme-button"
+				>
+					Theme
+				</button>
+				<ul class="dropdown__menu theme-switcher__list" id="theme">
+					<li class="dropdown__menu-item theme-swithcer__item">
+						<button
+							class="dropdown__menu-link theme-swithcer__button"
+							id="theme-os"
+						>
+							OS Default
+						</button>
+					</li>
+					<li class="dropdown__menu-item theme-swithcer__item">
+						<button
+							class="dropdown__menu-link theme-swithcer__button"
+							id="theme-light"
+						>
+							Light
+						</button>
+					</li>
+					<li class="dropdown__menu-item theme-swithcer__item">
+						<button
+							class="dropdown__menu-link theme-swithcer__button"
+							id="theme-dark"
+						>
+							Dark
+						</button>
+					</li>
+				</ul>
+			</div>
+			<button class="button button-outlined header__login">Log in</button>
+			<button class="button button-primary header__signup">Get started</button>
+		</div>
+	</div>
+</header>
+
+
+			<main class="page">
+				<div class="page__container">
+					<section class="page__hero hero section" id="hero">
+	<div class="hero__main">
+		<div class="hero__text-part">
+			<h1 class="hero__title">Let’s get fusely together</h1>
+			<p class="paragraph-text hero__text">
+				Outcome-centered product that reduce churn, optimize pricing, and grow
+				your subscription business end-to-end.
+			</p>
+			<button class="button button-primary">Get Started</button>
+		</div>
+		<div class="hero__image-wrapper">
+			<img
+				class="hero__image"
+				src="img/hero-image.svg"
+				alt="Hero hero-image"
+			/>
+		</div>
+	</div>
+	<div class="hero__partners">
+		<ul class="hero__partners-list">
+			<li class="hero__partnres-list-item">
+				<img
+					class="hero__partner-logo"
+					src="img/binator-logo.svg"
+					alt="Binator logo"
+				/>
+			</li>
+			<li class="hero__partnres-list-item">
+				<img
+					class="hero__partner-logo"
+					src="img/buyme-logo.svg"
+					alt="Buyme logo"
+				/>
+			</li>
+			<li class="hero__partnres-list-item">
+				<img
+					class="hero__partner-logo"
+					src="img/loogipsum-logo.svg"
+					alt="Loogipsum logo"
+				/>
+			</li>
+			<li class="hero__partnres-list-item">
+				<img
+					class="hero__partner-logo"
+					src="img/umbrella-logo.svg"
+					alt="Umbrella logo"
+				/>
+			</li>
+			<li class="hero__partnres-list-item">
+				<img
+					class="hero__partner-logo"
+					src="img/square-logo.svg"
+					alt="Square logo"
+				/>
+			</li>
+		</ul>
+	</div>
+</section>
+ <section class="page__features features section" id="features">
+	<section class="features__section features__section--reverted">
+		<div class="features__text-content">
+			<h2 class="heading-lg features__title">Detailed Examination</h2>
+			<p class="paragraph-text features__text">
+				A daily dataset to keep you up to date on subscription market trends and
+				what's happening in your vertical.
+			</p>
+			<a class="link link-article features__link" href="#">Learn more</a>
+		</div>
+		<div class="features__image-wrapper features__image1-wrapper">
+			<img
+				class="features__image"
+				src="img/section1.svg"
+				alt="Detailed expanation subsection image"
+			/>
+		</div>
+	</section>
+	<section class="features__section">
+		<div class="features__text-content">
+			<h2 class="heading-lg features__title">Creative Solutions</h2>
+			<p class="paragraph-text features__text">
+				Creativity is our second name. We're full of inventive ideas and we're
+				happy to present them to you.
+			</p>
+			<a class="link link-article features__link" href="#">Learn more</a>
+		</div>
+		<div class="features__image-wrapper features__image2-wrapper">
+			<img
+				class="features__image"
+				src="img/section2.svg"
+				alt="Creative solution subsection image"
+			/>
+		</div>
+	</section>
+	<section class="features__section features__section--reverted">
+		<div class="features__text-content">
+			<h2 class="heading-lg features__title">Professional Team</h2>
+			<p class="paragraph-text features__text">
+				Well, obviously, we're professionals. Don't hesitate - get to know us
+				better.
+			</p>
+			<a class="link link-article features__link" href="#">Learn more</a>
+		</div>
+		<div class="features__image-wrapper features__image3-wrapper">
+			<img
+				class="features__image"
+				src="img/section3.svg"
+				alt="Professional team subsection image"
+			/>
+		</div>
+	</section>
+</section>
+
+					<section class="page__pricing pricing section" id="pricing">
+	<h2 class="heading-lg pricing__heading">Choose your plan</h2>
+	<div class="pricing__tarifs">
+		<div class="pricing__tarif">
+			<p class="pricing__tarif-name">Starter</p>
+			<p class="pricing__tarif-price">Free</p>
+			<ul class="pricing__tafic-options">
+				<li class="pricing__tarif-option">Dashboard</li>
+				<li class="pricing__tarif-option">Limited Support</li>
+				<li class="pricing__tarif-option">Forever free</li>
+			</ul>
+			<button class="button button-outlined pricing__tarif-button">
+				Get Started
+			</button>
+		</div>
+		<div class="pricing__tarif pricing__tarif--preffered">
+			<p class="pricing__tarif-name">Premium</p>
+			<p class="pricing__tarif-price">
+				$29<span class="pricing__tarfic-period">/month</span>
+			</p>
+			<ul class="pricing__tafic-options">
+				<li class="pricing__tarif-option">Dashboard & Analysis</li>
+				<li class="pricing__tarif-option">Premium Support</li>
+				<li class="pricing__tarif-option">Tracking Service</li>
+			</ul>
+			<button class="button button-white pricing__tarif-button">
+				Get Started
+			</button>
+		</div>
+		<div class="pricing__tarif">
+			<p class="pricing__tarif-name">Enterprise</p>
+			<p class="pricing__tarif-price">
+				$49<span class="pricing__tarfic-period">/month</span>
+			</p>
+			<ul class="pricing__tafic-options">
+				<li class="pricing__tarif-option">
+					All features in <span class="pricing__pointed-text">Premium</span>
+				</li>
+				<li class="pricing__tarif-option">Realtime overview</li>
+				<li class="pricing__tarif-option">Mobile app</li>
+			</ul>
+			<button class="button button-outlined pricing__tarif-button">
+				Get Started
+			</button>
+		</div>
+	</div>
+</section>
+
+					<section class="page__testimonials testimonials">
+	<h2 class="heading-lg testimonials__title">Customer Stories</h2>
+	<div class="swiper-container testimonials__swiper-container">
+		<div class="swiper-wrapper testimonials__slider-wrapper">
+			<div class="swiper-slide testimonials__item">
+				<p class="testimonials__text">
+					“Using Fusely was the best experience I’ve ever had! Highly
+					recommended.”
+				</p>
+				<p class="testimonials__author">- Jane Cooper, Binary</p>
+			</div>
+			<div class="swiper-slide testimonials__item">
+				<p class="testimonials__text">
+					“Working with the team from Fusely was a pleasure. They're extremely
+					experienced people doing unbelievable things.”
+				</p>
+				<p class="testimonials__author">- Ralph Edwards, sqaure.io</p>
+			</div>
+			<div class="swiper-slide testimonials__item">
+				<p class="testimonials__text">
+					“Fusely provided us with great service and interaction in a very short
+					amount of time.”
+				</p>
+				<p class="testimonials__author">- Kathryn Murphy, Loogipsum</p>
+			</div>
+			<div class="swiper-slide testimonials__item">
+				<p class="testimonials__text">
+					“Fusely provided us with great service and interaction in a very short
+					amount of time.”
+				</p>
+				<p class="testimonials__author">- Kathryn Murphy, Loogipsum</p>
+			</div>
+			<div class="swiper-slide testimonials__item">
+				<p class="testimonials__text">
+					“Fusely provided us with great service and interaction in a very short
+					amount of time.”
+				</p>
+				<p class="testimonials__author">- Kathryn Murphy, Loogipsum</p>
+			</div>
+		</div>
+		<div class="swiper-pagination"></div>
+	</div>
+</section>
+
+					<section class="page__blog blog section" id="articles">
+	<div class="blog__heading-container">
+		<h2 class="heading-lg blog__title">From our blog</h2>
+		<button class="button button-outlined blog__heading-button">
+			View all
+		</button>
+	</div>
+	<div class="blog__articles">
+		<div class="blog__article">
+			<div class="blog__article-image-container">
+				<img
+					class="blog__acticle-image img-dark"
+					src="img/blog1.jpg"
+					alt="What's Fusely article image"
+				/>
+			</div>
+			<div class="blog__article-text-container">
+				<h5 class="blog__article-title">What’s Fusely?</h5>
+				<p class="blog__article-text">
+					A brand new company, created for everyone. This article will help you
+					understand what "fusely" stands for.
+				</p>
+				<a class="link link-article blob__article-link" href="#">Read more</a>
+			</div>
+		</div>
+		<div class="blog__article">
+			<div class="blog__article-image-container">
+				<img
+					class="blog__acticle-image img-dark"
+					src="img/blog2.jpg"
+					alt="What's Fusely article image"
+				/>
+			</div>
+			<div class="blog__article-text-container">
+				<h5 class="blog__article-title">Introducing Fusely Engage</h5>
+				<p class="blog__article-text">
+					We’re happy to announce the Fusely Engage. The first growth automation
+					platform designed for the digital interactions.
+				</p>
+				<a class="link link-article blob__article-link" href="#">Read more</a>
+			</div>
+		</div>
+		<div class="blog__article">
+			<div class="blog__article-image-container">
+				<img
+					class="blog__acticle-image img-dark"
+					src="img/blog3.jpg"
+					alt="What's Fusely article image"
+				/>
+			</div>
+			<div class="blog__article-text-container">
+				<h5 class="blog__article-title">Premium vs Enterprise plan</h5>
+				<p class="blog__article-text">
+					Let’s compare our most popular plans: Premium and Enterprise. This
+					article will help you decide which one will be better for your needs.
+				</p>
+				<a class="link link-article blob__article-link" href="#">Read more</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+				</div>
+			</main>
+			<footer class="page__footer footer">
+	<section class="footer__contact contact section" id="contacts">
+		<h2 class="contact__title">Interested in getting fusely?</h2>
+		<button class="button contact__cta">Let’s talk</button>
+	</section>
+	<div class="footer__container">
+		<section class="footer__column">
+			<h5 class="footer__column-title">Product</h5>
+			<ul class="footer__list">
+				<li class="footer__list-item">
+					<a class="link footer__link" href="#">How it works</a>
+				</li>
+				<li class="footer__list-item">
+					<a class="link footer__link" href="#">Features</a>
+				</li>
+				<li class="footer__list-item">
+					<a class="link footer__link" href="#">Pricing</a>
+				</li>
+				<li class="footer__list-item">
+					<a class="link footer__link" href="#">FAQ</a>
+				</li>
+				<li class="footer__list-item">
+					<a class="link footer__link" href="#">Download</a>
+				</li>
+			</ul>
+		</section>
+		<section class="footer__column">
+			<h5 class="footer__column-title">Company</h5>
+			<ul class="footer__list">
+				<li class="footer__list-item">
+					<a class="link footer__link" href="#">About</a>
+				</li>
+				<li class="footer__list-item">
+					<a class="link footer__link" href="#">Blog</a>
+				</li>
+				<li class="footer__list-item">
+					<a class="link footer__link" href="#">Partnership</a>
+				</li>
+				<li class="footer__list-item">
+					<a class="link footer__link" href="#">Terms of use</a>
+				</li>
+				<li class="footer__list-item">
+					<a class="link footer__link" href="#">Privacy policy</a>
+				</li>
+			</ul>
+		</section>
+		<section class="footer__column">
+			<h5 class="footer__column-title">Support</h5>
+			<ul class="footer__list">
+				<li class="footer__list-item">
+					<a class="link footer__link" href="#">Help center</a>
+				</li>
+				<li class="footer__list-item">
+					<a class="link footer__link" href="#">Contact us</a>
+				</li>
+				<li class="footer__list-item">
+					<a class="link footer__link" href="#">Pricing</a>
+				</li>
+			</ul>
+		</section>
+		<section class="footer__column">
+			<h5 class="footer__column-title">Get in touch</h5>
+			<ul class="footer__list footer__socials">
+				<li class="footer__list-item footer__socials-item">
+					<a class="link link-socials footer__link-socials" href="#">
+						<svg
+							class="icon-facebook"
+							width="19"
+							height="32"
+							viewBox="0 0 19 32"
+						>
+							<title>facebook</title>
+							<path
+								d="M17.099 15.64c0.567-1.402-0.465-2.933-1.978-2.933h-0.392c-1.178 0-2.133-0.955-2.133-2.133v-2.368c0-1.242 1.019-1.125 2.276-1.125h0.142c1.178 0 2.133-0.955 2.133-2.133v-1.36c0-1.178-0.955-2.133-2.133-2.133h-2.418c-1.811 0-3.547 0.711-4.827 1.978s-2 2.984-2 4.774v2.368c0 1.178-0.955 2.133-2.133 2.133h-0.284c-1.178 0-2.133 0.955-2.133 2.133v1.36c0 1.178 0.955 2.133 2.133 2.133h0.284c1.178 0 2.133 0.955 2.133 2.133v8.111c0 1.178 0.955 2.133 2.133 2.133h2.56c1.178 0 2.133-0.955 2.133-2.133v-8.206c0-1.126 0.913-2.039 2.039-2.039 0.831 0 1.579-0.504 1.89-1.274l0.574-1.419z"
+							></path>
+						</svg>
+					</a>
+				</li>
+				<li class="footer__list-item footer__socials-item">
+					<a class="link link-socials footer__link-socials" href="#">
+						<svg
+							class="icon-twitter"
+							width="42"
+							height="32"
+							viewBox="0 0 42 32"
+						>
+							<title>twitter</title>
+							<path
+								d="M39.979 4.255c-1.064 1.582-2.368 2.93-3.914 4.045 0.015 0.299 0.023 0.637 0.023 1.014 0 2.095-0.305 4.192-0.916 6.291s-1.544 4.109-2.799 6.029c-1.255 1.92-2.75 3.621-4.485 5.102s-3.821 2.663-6.257 3.544c-2.436 0.881-5.047 1.322-7.833 1.322-4.347 0-8.351-1.174-12.011-3.521 0.65 0.072 1.272 0.109 1.869 0.109 3.632 0 6.876-1.119 9.732-3.356-1.693-0.031-3.21-0.552-4.55-1.564s-2.262-2.304-2.766-3.878c0.498 0.095 0.99 0.142 1.476 0.142 0.699 0 1.386-0.091 2.063-0.273-1.807-0.362-3.306-1.262-4.498-2.7s-1.787-3.098-1.787-4.98v-0.097c1.109 0.614 2.292 0.941 3.55 0.98-1.071-0.714-1.919-1.644-2.546-2.792s-0.941-2.39-0.941-3.726c0-1.409 0.353-2.722 1.059-3.937 1.965 2.412 4.347 4.339 7.144 5.782s5.799 2.245 9.003 2.405c-0.137-0.57-0.205-1.164-0.205-1.783 0-2.162 0.765-4.008 2.296-5.539s3.377-2.295 5.539-2.295c2.264 0 4.171 0.824 5.72 2.473 1.771-0.351 3.429-0.985 4.974-1.903-0.595 1.874-1.743 3.319-3.441 4.336 1.562-0.186 3.062-0.596 4.501-1.231v0z"
+							></path>
+						</svg>
+					</a>
+				</li>
+				<li class="footer__list-item footer__socials-item">
+					<a class="link link-socials footer__link-socials" href="#">
+						<svg
+							class="icon-linkedin"
+							width="42"
+							height="32"
+							viewBox="0 0 42 32"
+						>
+							<title>linkedin</title>
+							<path d="M12.484 11.356h-6.409v18.768h6.409v-18.768z"></path>
+							<path
+								d="M11.406 2.597c-0.611-0.37-1.329-0.567-2.063-0.567-0.49 0-0.975 0.088-1.427 0.259s-0.863 0.421-1.209 0.736c-0.345 0.315-0.619 0.69-0.804 1.101s-0.28 0.852-0.277 1.297c0.004 0.666 0.226 1.317 0.637 1.869s0.993 0.982 1.673 1.234c0.68 0.252 1.426 0.316 2.146 0.184s1.38-0.455 1.898-0.928c0.518-0.473 0.87-1.074 1.011-1.728s0.067-1.331-0.215-1.947c-0.282-0.615-0.758-1.141-1.369-1.511z"
+							></path>
+							<path
+								d="M22.771 11.355h-6.174l-0.021 18.807h6.409v-9.287c0-2.443 0.513-4.808 3.845-4.808s3.333 2.811 3.333 4.983v9.074h6.409v-10.295c0-5.060-1.303-8.938-7.712-8.938-1.221-0.043-2.433 0.215-3.505 0.748s-1.965 1.32-2.583 2.277v-2.559z"
+							></path>
+						</svg>
+					</a>
+				</li>
+			</ul>
+		</section>
+	</div>
+	<div class="footer__bottom">
+		<div class="footer__logo">
+			<a class="logo--small logo__link" href="">
+				<img class="logo__img" src="img/fusely-logo.svg" alt="Site logo" />
+				fusely
+			</a>
+		</div>
+		<p class="footer__copy">© Fusely 2021. All rights reserved.</p>
+	</div>
+</footer>
+
+		</div>
+
+		<script src="js/app.min.js?_v=20230109121033" type="module"></script>
+	</body>
+</html>
