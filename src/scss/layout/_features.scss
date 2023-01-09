@@ -1,0 +1,88 @@
+@use "abstract" as *;
+@use "base" as *;
+@use "sass:math";
+
+.features {
+	display: flex;
+	flex-direction: column;
+	@include adaptive-value("gap", 220, 100, 1);
+}
+
+.features__section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	gap: rem(30);
+
+	@include mqm($pc) {
+		flex-direction: row;
+
+		&--reverted {
+			flex-direction: row-reverse;
+		}
+	}
+}
+
+.features__text-content {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	gap: rem(16);
+
+	@include mqm($tablet) {
+		gap: rem(24);
+	}
+
+	@include mqm($pc) {
+		max-width: rem(400);
+	}
+}
+
+.features__image-wrapper {
+	@include mqm($pc) {
+		max-width: 600px;
+	}
+}
+
+.features__image1-wrapper {
+	height: 283px;
+
+	@include mqm(600) {
+		height: 508px;
+	}
+
+	@include mqm($pc) {
+		max-height: 442px;
+	}
+}
+
+.features__image2-wrapper {
+	height: 322px;
+
+	@include mqm(600) {
+		height: 572px;
+	}
+
+	@include mqm($pc) {
+		max-height: 498px;
+	}
+}
+
+.features__image3-wrapper {
+	height: 262px;
+
+	@include mqm(600) {
+		height: 465px;
+	}
+
+	@include mqm($pc) {
+		max-height: 406px;
+	}
+}
+
+.features__image {
+	height: 100%;
+	width: 100%;
+	object-fit: contain;
+}

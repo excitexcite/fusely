@@ -13,7 +13,12 @@
 			@@include('html/header.html', {})
 
 			<main class="page">
-				<div class="page__container">@@include('html/main.html', {})</div>
+				<div class="page__container">
+					@@include('html/main.html', {}) @@include('html/features.html', {})
+					@@include('html/pricing.html', {})
+					@@include('html/testimonials.html',{})
+					@@include('html/blog-articles.html',{})
+				</div>
 			</main>
 			@@include('html/footer.html', {})
 		</div>

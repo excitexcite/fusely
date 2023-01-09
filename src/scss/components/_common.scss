@@ -1,3 +1,228 @@
 @use "../abstract" as *;
 @use "../base" as *;
 @use "sass:math";
+
+.button {
+	cursor: pointer;
+	font-size: rem(14);
+	font-weight: 700;
+	line-height: 1.4;
+	border-radius: 2px;
+	padding: rem(16) rem(30);
+}
+
+.button-primary {
+	color: var(--neutral100);
+	background-color: var(--primary400);
+	transition: color $buttonTransition ease-in-out,
+		background-color $buttonTransition ease-in-out;
+
+	@media (hover: hover) {
+		&:hover {
+			color: var(--neutral500);
+			background-color: var(--secondary400);
+		}
+	}
+}
+
+.button-outlined {
+	border: 1px solid var(--primary400);
+	color: var(--primary400);
+	background-color: transparent;
+	padding: rem(15) rem(30);
+	transition: color $buttonTransition ease-in-out,
+		border-color $buttonTransition ease-in-out;
+
+	@media (hover: hover) {
+		&:hover {
+			color: var(--secondary400);
+			border-color: var(--secondary400);
+		}
+	}
+}
+
+.button-white {
+	color: var(--primary400);
+	background-color: var(--neutral100);
+	transition: color $buttonTransition ease-in-out,
+		background-color $buttonTransition ease-in-out;
+
+	@media (hover: hover) {
+		&:hover {
+			color: var(--neutral100);
+			background-color: var(--secondary400);
+		}
+	}
+}
+
+.link {
+	font-family: "Open Sans", sans-serif;
+	cursor: pointer;
+}
+
+.link-menu {
+	font-weight: 700;
+	font-size: rem(20);
+	line-height: math.div(28, 16);
+	color: var(--link-menu);
+
+	&--active {
+		color: var(--link-menu-active);
+	}
+
+	@include mqm($pc) {
+		line-height: math.div(22, 16);
+		font-size: rem(16);
+	}
+}
+
+.link-article {
+	position: relative;
+	font-weight: 600;
+	font-size: rem(18);
+	line-height: math.div(20, 16);
+	color: var(--link-article);
+	padding-inline: rem(4);
+	text-align: center;
+
+	&::before {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 40%;
+		bottom: 0;
+		left: 0;
+		z-index: -1;
+		background-color: var(--link-article-bg);
+		transition: height 300ms ease-in-out;
+	}
+
+	@media (hover: hover) {
+		&:hover {
+			&::before {
+				height: 100%;
+			}
+		}
+	}
+
+	&:active {
+		text-decoration: underline;
+	}
+}
+
+.lint-text {
+	color: var(--link-text);
+	text-decoration: underline;
+}
+
+.link-socials {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: rem(32);
+	height: rem(32);
+	fill: var(--icon-fill);
+	background-color: var(--icon-bg);
+	transition: fill $linkTransition ease-in-out;
+
+	@media (hover: hover) {
+		&:hover {
+			fill: var(--secondary400);
+		}
+	}
+
+	&:active {
+		outline: 1px solid var(--secondary400);
+	}
+}
+
+.paragraph-text {
+	font-size: rem(20);
+	line-height: 1.7;
+}
+
+.heading-lg {
+	@include adaptive-font(36, 60, $tablet);
+}
+
+.logo {
+	font-size: rem(18);
+	height: rem(27);
+
+	&--small {
+		height: rem(23);
+		font-size: rem(14);
+	}
+}
+
+.logo__link {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	font-weight: 700;
+	color: var(--title-text);
+
+	transition: color $linkTransition ease-in-out;
+
+	@media (hover: hover) {
+		&:hover {
+			color: var(--secondary500);
+		}
+	}
+}
+
+.logo__img {
+	height: 100%;
+}
+
+.dropdown {
+	position: relative;
+
+	&:focus-within {
+		.dropdown__menu {
+			opacity: 1;
+			transform: rotateX(0) translateX(-50%);
+			visibility: visible;
+		}
+
+		.dropdown__menu .dropdown__menu-link {
+			opacity: 1;
+		}
+	}
+}
+
+.dropdown__menu {
+	position: absolute;
+	min-width: max-content;
+	left: 50%;
+	top: calc(100% + 10px);
+	transition: $dropdownTransition;
+	transform: rotateX(-90deg) translateX(-50%);
+	transform-origin: top center;
+	visibility: hidden;
+	opacity: 0.3;
+	background-color: var(--dropdown-bg);
+	border-radius: 12px;
+	box-shadow: var(--box-shadow-common);
+}
+
+.dropdown__title {
+	display: inline-flex;
+	align-items: center;
+	cursor: pointer;
+	background-color: inherit;
+}
+
+.dropdown__menu-item {
+	width: 100%;
+}
+
+.dropdown__menu-link {
+	cursor: pointer;
+	display: block;
+	font-size: rem(16);
+	line-height: math.div(22, 16);
+	opacity: 0;
+	transition: $dropdownTransition;
+	background-color: inherit;
+}

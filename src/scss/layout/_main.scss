@@ -1,3 +1,94 @@
 @use "abstract" as *;
 @use "base" as *;
 @use "sass:math";
+
+.page__hero {
+	margin-top: rem(113);
+
+	@include mqm($mobile) {
+		margin-top: rem(146);
+	}
+
+	@include mqm($tablet) {
+		margin-top: rem(171);
+	}
+}
+
+.hero__main {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	gap: rem(30);
+	max-width: rem(1180);
+	margin-inline: auto;
+
+	@include mqm($pc) {
+		flex-direction: row;
+	}
+}
+
+.hero__text-part {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	gap: rem(24);
+
+	@include mqm($mobile) {
+		gap: rem(30);
+	}
+
+	@include mqm($pc) {
+		max-width: 489px;
+	}
+}
+
+.hero__title {
+	font-weight: 700;
+	@include adaptive-font(46, 86, $tablet);
+}
+
+.hero__image-wrapper {
+	height: 340px;
+
+	@include mqm(600) {
+		height: 600px;
+	}
+
+	@include mqm($pc) {
+		max-height: 560px;
+		max-width: 642px;
+	}
+}
+
+.hero__image {
+	height: 100%;
+	width: 100%;
+	object-fit: contain;
+}
+
+.hero__partners {
+	margin: rem(80) auto 0;
+	max-width: rem(900);
+
+	@include mqm($tablet) {
+		margin-top: rem(107);
+	}
+
+	@include mqm($pc) {
+		margin-top: rem(120);
+	}
+}
+
+.hero__partners-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	row-gap: rem(32);
+	column-gap: rem(16);
+
+	@include mqm(640) {
+		justify-content: space-between;
+	}
+}

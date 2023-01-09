@@ -1,6 +1,10 @@
 @forward "header";
 @forward "footer";
 @forward "main";
+@forward "features";
+@forward "pricing";
+@forward "testimonials";
+@forward "blog-articles";
 
 @use "abstract" as *;
 @use "base" as *;
@@ -8,4 +12,10 @@
 
 .page {
 	position: relative;
+}
+
+.page__container {
+	display: flex;
+	flex-direction: column;
+	@include adaptive-value("gap", 220, 100, 1);
 }

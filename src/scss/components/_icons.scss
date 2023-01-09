@@ -1,3 +1,33 @@
 @use "abstract" as *;
 @use "base" as *;
 @use "sass:math";
+
+.icon {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	stroke-width: 0;
+	stroke: currentColor;
+	fill: currentColor;
+}
+
+.icon-facebook {
+	width: rem(8);
+}
+
+.icon-linkedin {
+	width: rem(16);
+}
+
+.icon-twitter {
+	width: rem(16);
+}
+
+.icon-theme-light,
+.icon-theme-system,
+.icon-theme-dark {
+	width: rem(40);
+	height: rem(40);
+	fill: var(--primary500);
+	color: white;
+}

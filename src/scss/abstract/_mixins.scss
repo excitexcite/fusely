@@ -3,11 +3,15 @@
 @use "_functions.scss" as *;
 
 /// https://www.smashingmagazine.com/2016/05/fluid-typography/#controlling-the-rate-of-scale
-@mixin adaptive-font($mobileFontSize, $pcFontSize) {
+@mixin adaptive-font(
+	$mobileFontSize,
+	$pcFontSize,
+	$maxWidthStopGrowth: $maxWidthContainer
+) {
 	$fMin: rem($mobileFontSize);
 	$fMax: rem($pcFontSize);
 	$minW: rem($minWidth);
-	$maxW: rem($maxWidthContainer);
+	$maxW: rem($maxWidthStopGrowth);
 	font-size: $fMin;
 	@media screen and (min-width: em($minWidth)) {
 		font-size: calc(
@@ -15,7 +19,7 @@
 				((100vw - #{$minWidth + px}) / #{stripUnits($maxW - $minW)})
 		);
 	}
-	@media screen and (min-width: em($maxWidthContainer)) {
+	@media screen and (min-width: em($maxWidthStopGrowth)) {
 		font-size: $fMax;
 	}
 }
@@ -48,7 +52,14 @@
 	}
 }
 
-@mixin adaptive-value($property, $initialSize, $minSize, $type, $measure: rem) {
+@mixin adaptive-value(
+	$property,
+	$initialSize,
+	$minSize,
+	$type,
+	$maxWidthStopGrowth: $maxWidthContainer,
+	$measure: rem
+) {
 	@if ($measure == "em") {
 		$initialSize: em($initialSize);
 		$minSize: em($minSize);
@@ -63,19 +74,19 @@
 	@if $type == 1 {
 		#{$property}: $initialSize;
 
-		@media (max-width: em($maxWidthContainer)) {
+		@media (max-width: em($maxWidthStopGrowth)) {
 			#{$property}: calc(
 				#{$minSize} + #{stripUnits($addSize)} *
 					(
 						(100vw - #{$minWidth + px}) / #{stripUnits(
-								em($maxWidthContainer - $minWidth)
+								em($maxWidthStopGrowth - $minWidth)
 							)}
 					)
 			);
 		}
 	} @else if $type == 2 {
 		#{$property}: $initialSize;
-		@media (min-width: em($maxWidthContainer)) {
+		@media (min-width: em($maxWidthStopGrowth)) {
 			#{$property}: calc(
 				#{$minSize} + #{stripUnits($addSize)} *
 					(
@@ -95,14 +106,14 @@
 }
 
 @mixin mqd($bp) {
-	$w: em($bp - 0.1);
+	$w: em($bp);
 	@media (max-width: $w) {
 		@content;
 	}
 }
 
 @mixin mqm($bp) {
-	$w: em($bp - 0.1);
+	$w: em($bp);
 	@media (min-width: $w) {
 		@content;
 	}

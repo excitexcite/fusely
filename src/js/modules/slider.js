@@ -1,19 +1,15 @@
 // core version + navigation, pagination modules:
 import Swiper, { Navigation, Pagination } from 'swiper';
 
-Swiper.use([Navigation]);
+Swiper.use([Navigation, Pagination]);
 
-const mainSlider = new Swiper('.', {
+const testimonialsSlider = new Swiper('.testimonials__swiper-container', {
 	slidesPerView: 'auto',
-	spaceBetween: 20,
+	centeredSlides: true,
+	spaceBetween: 45,
 
-	breakpoints: {
-		900: {
-			slidesPerView: 3,
-			spaceBetween: 30,
-		},
-		1100: {
-			spaceBetween: 30,
-		},
+	pagination: {
+		el: '.swiper-pagination',
+		clickable: true,
 	},
 });

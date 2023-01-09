@@ -3,7 +3,7 @@
 
 $breakpoints: (
 	"mobileS": em(320 - 0.1),
-	"mobileM": em(480 - 0.1),
+	"mobileM": em(428 - 0.5),
 	"tabletS": em(768 - 0.1),
 	"tabletM": em(834 - 0.1),
 	"tabletL": em(960 - 0.1),
@@ -12,6 +12,7 @@ $breakpoints: (
 );
 
 @mixin mobileS {
+	@debug map-get($breakpoints, "mobileS");
 	@media (max-width: map-get($breakpoints, "mobileS")) {
 		@content;
 	}
@@ -60,6 +61,8 @@ $breakpoints: (
 }
 
 @mixin m-mobileM {
+	@debug em(428);
+	@debug map-get($breakpoints, "mobileM");
 	@media (min-width: map-get($breakpoints, "mobileM")) {
 		@content;
 	}
