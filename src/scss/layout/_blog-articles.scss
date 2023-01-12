@@ -23,7 +23,7 @@
 .blog__article {
 	display: flex;
 	flex-direction: column;
-	align-items: start;
+	align-items: flex-start;
 	gap: rem(26);
 
 	@include mqm($tablet) {
