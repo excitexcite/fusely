@@ -12,13 +12,13 @@
 	padding-top: rem(20);
 	transition: $themeColorTransition, padding 500ms ease-in-out;
 
-	@include mqm($tablet) {
-		padding-top: rem(40);
+	&--scrolled {
+		padding-top: 0 !important;
+		box-shadow: var(--box-shadow-common);
 	}
 
-	&--scrolled {
-		padding-top: 0;
-		box-shadow: var(--box-shadow-common);
+	@include mqm($tablet) {
+		padding-top: rem(40);
 	}
 }
 

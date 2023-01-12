@@ -10,6 +10,7 @@
 		"dev": "gulp",
 		"devNoFonts": "gulp devNoFonts",
 		"build": "gulp build --build",
+		"buildNoFonts": "gulp buildNoFonts --build",
 		"zip": "gulp deployZip --build",
 		"deploy": "gulp deployFTP --build",
 		"deployGithub": "gh-pages -d dist",
@@ -19,6 +20,7 @@
 	"license": "MIT",
 	"devDependencies": {
 		"browser-sync": "latest",
+		"css-mqpacker": "^7.0.0",
 		"del": "latest",
 		"fonter": "latest",
 		"gulp": "latest",
@@ -32,6 +34,7 @@
 		"gulp-newer": "latest",
 		"gulp-notify": "latest",
 		"gulp-plumber": "latest",
+		"gulp-postcss": "^9.0.1",
 		"gulp-rename": "latest",
 		"gulp-replace": "latest",
 		"gulp-sass": "latest",
@@ -43,7 +46,9 @@
 		"gulp-webp-html-nosvg": "latest",
 		"gulp-webpcss": "latest",
 		"gulp-zip": "latest",
+		"postcss": "^8.4.21",
 		"sass": "latest",
+		"sort-css-media-queries": "^2.1.0",
 		"vinyl-ftp": "latest",
 		"webp-converter": "2.2.3",
 		"webpack": "latest",
@@ -52,5 +57,12 @@
 	"dependencies": {
 		"gh-pages": "^4.0.0",
 		"swiper": "^8.4.5"
+	},
+	"postcss": {
+		"parser": "sugarss",
+		"map": false,
+		"plugins": {
+			"postcss-plugin": {}
+		}
 	}
 }

@@ -6,6 +6,9 @@ import autoprefixer from 'gulp-autoprefixer'; // vendor prefixes
 import cleanCss from 'gulp-clean-css'; // minification css file
 import groupCssMediaQueries from 'gulp-group-css-media-queries'; // grouping media queries
 import webpcss from 'gulp-webpcss'; // webp images
+import postcss from 'gulp-postcss'; // gulp plugin for postcss api
+import mqpacker from 'css-mqpacker'; // old package that is a part of sort-css-media-queries
+import sortCSSmq from 'sort-css-media-queries'; // sort media queries
 
 const sass = gulpSass(dartSass);
 
@@ -37,6 +40,16 @@ export const scss = () => {
 						overrideBrowserslist: ['last 3 versions'],
 						cascade: true,
 					})
+				)
+			)
+			.pipe(
+				app.plugins.if(
+					app.isBuild,
+					postcss([
+						mqpacker({
+							sort: sortCSSmq,
+						}),
+					])
 				)
 			)
 			// creating non minified css file if need

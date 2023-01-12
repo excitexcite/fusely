@@ -36,6 +36,7 @@ export { svgSpriteCreate };
 export { dev };
 export { devNoFonts };
 export { build };
+export { buildNoFonts };
 export { deployZip };
 export { deployFTP };
 export { fonts };
@@ -57,6 +58,7 @@ const devNoFonts = gulp.series(
 	mainTasksNoFonts,
 	gulp.parallel(watcher, server)
 );
+const buildNoFonts = gulp.series(resetNoFonts, mainTasksNoFonts);
 const build = gulp.series(reset, mainTasks);
 const deployZip = gulp.series(reset, mainTasks, zip);
 const deployFTP = gulp.series(reset, mainTasks, ftp);

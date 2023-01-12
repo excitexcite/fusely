@@ -6,10 +6,10 @@ import * as theme from './modules/theme.js';
 
 func.isWebp();
 
-const navigationHieght = document.querySelector('.header');
+const navigationHeight = document.querySelector('.header');
 document.documentElement.style.setProperty(
 	'--scroll-padding',
-	navigationHieght.getBoundingClientRect().height + 'px'
+	navigationHeight.getBoundingClientRect().height + 'px'
 );
 
 const menuToggle = document.querySelector('.menu-button');
@@ -60,6 +60,7 @@ const navMenuLinks = document.querySelectorAll('.menu__link');
 const navMenuObserver = new IntersectionObserver(
 	function (entries) {
 		entries.forEach((entry) => {
+			// if (entry.isIntersecting && entries.intersectionRatio > 0.5) {
 			if (entry.isIntersecting) {
 				navMenuLinks.forEach((link) => {
 					const targetSection = link.getAttribute('href').replace('#', '');
@@ -72,7 +73,7 @@ const navMenuObserver = new IntersectionObserver(
 		});
 	},
 	{
-		rootMargin: '-100px 0px 0px 0px',
+		threshold: 0.2,
 	}
 );
 
